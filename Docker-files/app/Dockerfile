@@ -3,6 +3,8 @@ RUN git clone https://github.com/siddhesh-its/vprofile-project.git
 RUN cd vprofile-project && git checkout containers && mvn install
 
 FROM tomcat:10-jdk21 AS SERVICE_IMAGE
+LABEL "AUTHOR"="SIDDHESH"
+LABEL "PROJECT"="VPROFILE_app"
 RUN rm -rf /urs/local/tomcat/webapps/*
 COPY --from=MAVEN_IMAGE vprofile-project/target/vprofile-v2.war /urs/local/tomcat/webapps/ROOT.war
 
