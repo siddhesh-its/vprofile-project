@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8'
 services:
   vprodb:
     build: 
@@ -41,7 +41,7 @@ services:
     image: siddheshdevops/vprofileweb
     container_name: vproweb
     ports:
-      - "8070:80"
+      - "80:80"
 
 volumes:
   vprodbdata: {}
