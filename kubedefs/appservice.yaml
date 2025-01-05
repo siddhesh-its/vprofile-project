@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vproapp-service
+spec:
+  replicas: 1
+  selector:
+    app: vproapp
+  ports:
+  - port: 8080
+    targetPort: vproapp-port
+    protocol: TCP
+  type: ClusterIP

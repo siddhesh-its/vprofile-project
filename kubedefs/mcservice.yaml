@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vprocache01 #name of the service will come from application properties, because this will be used for service discovery
+spec:
+  selector:
+     app: vpromc
+  ports:
+  - port: 11211
+    targetPort: vpromc-port
+    protocol: TCP
+  type: ClusterIP
